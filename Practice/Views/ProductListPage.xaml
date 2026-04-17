@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Practice.Views.ProductListPage"
+             xmlns:vm="clr-namespace:Practice.ViewModels"
+             Title="Inventory Manager">
+    <ContentPage.Content>
+        
+        <Grid RowDefinitions="Auto, *">
+            <Label Grid.Row="0" 
+                   Text="Current Stock" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" 
+                   Margin="20" />
+
+            <CollectionView Grid.Row="1" 
+                            ItemsSource="{Binding Products}"
+                            SelectionMode="Single"
+                            SelectionChanged="OnProductSelected"
+                            Margin="10">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Stroke="Gray" 
+                                StrokeThickness="1" 
+                                Margin="0,5" 
+                                Padding="15">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="5" />
+                            </Border.StrokeShape>
+                    
+                            <HorizontalStackLayout Spacing="8">
+                                <Label Text="{Binding Name}" 
+                                       VerticalOptions="Center" 
+                                       WidthRequest="100" />
+    
+                                <Label Text="{Binding Quantity}" 
+                                       VerticalOptions="Center" 
+                                       WidthRequest="30" />
+    
+                                <Label Text="{Binding Price, StringFormat='{0:C}'}" 
+                                       VerticalOptions="Center" 
+                                       Margin="0,0,10,0" /> <Label Text="{Binding StockValue, StringFormat='Total: {0:C}'}" 
+                                                                   TextColor="Green" 
+                                                                   FontAttributes="Bold" 
+                                                                   VerticalOptions="Center" />
+                            </HorizontalStackLayout>
+
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+
+        
+    </ContentPage.Content>
+</ContentPage>

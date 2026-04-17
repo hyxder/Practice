@@ -3,12 +3,13 @@
     x:Class="Practice.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:Practice.Views"
     xmlns:local="clr-namespace:Practice"
     Title="Practice">
 
     <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
+        ContentTemplate="{DataTemplate views:ProductListPage}"
         Route="MainPage" />
 
 </Shell>

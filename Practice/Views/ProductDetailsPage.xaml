@@ -1,0 +1,38 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Practice.Views.ProductDetailsPage"
+             Title="Edit Product">
+
+    <VerticalStackLayout Padding="30" Spacing="20">
+        
+        <Border Stroke="Gray" Padding="15">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10" />
+            </Border.StrokeShape>
+            
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Product Name" FontAttributes="Bold" />
+                <Entry Text="{Binding Name}" Placeholder="Enter name" />
+
+                <Label Text="Quantity" FontAttributes="Bold" />
+                <Entry Text="{Binding Quantity}" Keyboard="Numeric" />
+
+                <Label Text="Price" FontAttributes="Bold" />
+                <Entry Text="{Binding Price}" Keyboard="Numeric" />
+            </VerticalStackLayout>
+        </Border>
+
+        <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+            <Button Text="Save Changes" 
+                    BackgroundColor="Green" 
+                    TextColor="White" 
+                    WidthRequest="120" />
+            
+            <Button Text="Delete Item" 
+                    BackgroundColor="Red" 
+                    TextColor="White" 
+                    WidthRequest="120" />
+        </HorizontalStackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>

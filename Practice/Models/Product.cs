@@ -62,7 +62,7 @@ public class Product : INotifyPropertyChanged
         Price = price;
     }
 
-    public decimal StockValue => Quantity * Price;
+    public virtual decimal StockValue => Quantity * Price;
 
 
     public event PropertyChangedEventHandler? PropertyChanged;
