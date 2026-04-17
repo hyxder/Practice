@@ -32,18 +32,6 @@ public class MainViewModel : INotifyPropertyChanged
             }
         }
     }
-
-
-    private async void NavigateToDetails()
-    {
-        var navigationParameter = new Dictionary<string, object>
-        {
-            { "SelectedProduct", SelectedProduct }
-        };
-        await Shell.Current.GoToAsync(nameof(Views.ProductDetailsPage), navigationParameter);
-        
-        SelectedProduct = null;
-    }
     
     public event PropertyChangedEventHandler? PropertyChanged;
     protected virtual void OnPropertyChanged([CallerMemberName] string? propertyName = null)
